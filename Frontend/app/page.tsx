@@ -12,7 +12,7 @@ import { TeamSection } from "@/components/layout/sections/team";
 import { TestimonialSection } from "@/components/layout/sections/testimonial";
 import { ResultsSection } from "@/components/layout/sections/Results/ResultSection";
 import { WhyChooseSection } from "@/components/layout/sections/WhyChoose/WhyChooseSection";
-import CoursesSection from "@/components/layout/sections/CourseSection";
+// import CoursesSection from "@/components/layout/sections/CourseSection";
 import AdmissionInfo from "@/components/layout/sections/AdmissionSection";
 import CallToAction from "@/components/layout/sections/Call";
 import { FooterSection } from "@/components/layout/sections/FooterSection";
@@ -52,7 +52,7 @@ export default function Home() {
       <HeroSection />
       <ResultsSection />
       <WhyChooseSection />
-      <CoursesSection />
+      {/* <CoursesSection /> */}
       <AdmissionInfo/>
       <CallToAction/>
       <ContactSection/>

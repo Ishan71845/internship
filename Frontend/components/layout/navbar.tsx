@@ -12,11 +12,11 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="fixed w-full z-50 bg-white shadow-md">
-      <div className="container flex items-center justify-between py-4">
+    <nav className="fixed w-full z-50 bg-white shadow-md" aria-label="Main navigation">
+      <div className="container flex items-center justify-between py-4 mx-auto">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <Image src="/logo2.png" alt="Logo" width={80} height={80} />
+          <Image src="/logo2.png" alt="Arpita's Science Academy Logo" width={80} height={80} />
           <span className="text-lg font-bold text-blue-800 hidden sm:block">
             Arpita&apos;s Science Academy
           </span>
@@ -25,21 +25,11 @@ const Navbar = () => {
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-6">
           <ul className="flex gap-8 font-medium text-gray-700">
-            <li>
-              <Link href="/">Why Us</Link>
-            </li>
-            <li>
-              <Link href="/">Results</Link>
-            </li>
-            <li>
-              <Link href="/">Courses</Link>
-            </li>
-            <li>
-              <Link href="/">Faculty</Link>
-            </li>
-            <li>
-              <Link href="/">Testimonials</Link>
-            </li>
+            <li><Link href="/">Why Us</Link></li>
+            <li><Link href="/results">Results</Link></li>
+            <li><Link href="/courses">Courses</Link></li>
+            <li><Link href="/faculty">Faculty</Link></li>
+            <li><Link href="/testimonial">Testimonials</Link></li>
           </ul>
 
           {/* Social icons on desktop */}
@@ -75,7 +65,8 @@ const Navbar = () => {
         <button
           onClick={toggleMenu}
           className="md:hidden text-gray-700 focus:outline-none"
-          aria-label="Toggle Menu"
+          aria-label="Toggle menu"
+          aria-expanded={isOpen}
         >
           {isOpen ? <HiX size={30} /> : <HiMenuAlt3 size={30} />}
         </button>
@@ -86,29 +77,19 @@ const Navbar = () => {
         <div className="md:hidden bg-white shadow-inner">
           <ul className="flex flex-col gap-4 p-6 text-gray-700 font-medium">
             <li>
-              <Link href="/" onClick={() => setIsOpen(false)}>
-                Why Us
-              </Link>
+              <Link href="/" onClick={() => setIsOpen(false)}>Why Us</Link>
             </li>
             <li>
-              <Link href="/" onClick={() => setIsOpen(false)}>
-                Results
-              </Link>
+              <Link href="/results" onClick={() => setIsOpen(false)}>Results</Link>
             </li>
             <li>
-              <Link href="/" onClick={() => setIsOpen(false)}>
-                Courses
-              </Link>
+              <Link href="/courses" onClick={() => setIsOpen(false)}>Courses</Link>
             </li>
             <li>
-              <Link href="/" onClick={() => setIsOpen(false)}>
-                Faculty
-              </Link>
+              <Link href="/faculty" onClick={() => setIsOpen(false)}>Faculty</Link>
             </li>
             <li>
-              <Link href="/" onClick={() => setIsOpen(false)}>
-                Testimonials
-              </Link>
+              <Link href="/testimonial" onClick={() => setIsOpen(false)}>Testimonials</Link>
             </li>
           </ul>
 
