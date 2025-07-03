@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed w-full z-50 bg-white shadow-md" aria-label="Main navigation">
-      <div className="container flex items-center justify-between py-4 mx-auto">
+      <div className="container flex items-center justify-between py-7 mx-auto">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <Image src="/logo2.png" alt="Arpita's Science Academy Logo" width={80} height={80} />
@@ -30,6 +30,8 @@ const Navbar = () => {
             <li><Link href="/courses">Courses</Link></li>
             <li><Link href="/faculty">Faculty</Link></li>
             <li><Link href="/testimonial">Testimonials</Link></li>
+            <li><Link href="/gallery">Gallery</Link></li>
+            <li><Link href="/testimonial">Sample Study Material</Link></li>
           </ul>
 
           {/* Social icons on desktop */}
