@@ -30,39 +30,42 @@ const galleryImages = [
 export default function GalleryPage() {
   return (
     <div className="container mx-auto px-4 py-8">
-      {/* Hero section with Director */}
-      <div className="relative w-full h-[400px] mb-8 rounded-xl overflow-hidden justify-center">
+      {/* Hero section with Director & motivational quote */}
+      <div className="relative w-full h-[400px] mb-8 rounded-xl overflow-hidden flex items-center justify-center">
         <Image
           src="/gallery/director.jpg"
           alt="Director"
           width={500}
-          height={400}
-          className="object-cover brightness-75 align-item-centre"
+          height={200}
+          className=" brightness-95 ml-0"
           priority
         />
-        <div className="absolute inset-0 flex items-center align-item-center justify-center">
-          <h1 className="text-4xl font-bold text-white drop-shadow-lg">
-            Meet Our Director
+        <div className="inset-0 flex flex-col items-center justify-center px-4 text-center">
+          <h1 className="text-3xl md:text-4xl font-bold text-white drop-shadow-lg mb-4">
+            "Success is no accident. It is hard work, perseverance, learning,
+            studying, sacrifice, and most of all, love of what you are doing."
           </h1>
+          <p className="text-lg text-white/80">- Sikandar Sir</p>
+          <p className="text-sm text-white/80 ">Director at Arpita&apos;s Science Academy</p>
         </div>
       </div>
 
       {/* Gallery grid */}
-    <div className="columns-3 sm:columns-2 md:columns-3 gap-4 space-y-4">
-      {galleryImages
-        .filter((src) => src !== "/gallery/director.jpg")
-        .map((src, idx) => (
-        <div key={idx} className="overflow-hidden rounded-lg">
-          <Image
-            src={src}
-            alt={`Gallery ${idx + 1}`}
-            width={400}
-            height={300}
-            className="w-full mb-4 rounded-lg transition-transform duration-300 hover:scale-105 hover:brightness-110"
-          />
-        </div>
-        ))}
-    </div>
+      <div className="columns-3 sm:columns-2 md:columns-3 gap-4 space-y-4">
+        {galleryImages
+          .filter((src) => src !== "/gallery/director.jpg")
+          .map((src, idx) => (
+            <div key={idx} className="overflow-hidden rounded-lg">
+              <Image
+                src={src}
+                alt={`Gallery ${idx + 1}`}
+                width={400}
+                height={300}
+                className="w-full mb-4 rounded-lg transition-transform duration-300 hover:scale-105 hover:brightness-110"
+              />
+            </div>
+          ))}
+      </div>
     </div>
   );
 }

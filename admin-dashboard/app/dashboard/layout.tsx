@@ -40,6 +40,8 @@ export default function DashboardLayout({
           <SidebarLink href="/dashboard/results" active={pathname === "/dashboard/results"} label="Results" />
           <SidebarLink href="/dashboard/testimonials" active={pathname === "/dashboard/testimonials"} label="Testimonials" />
           <SidebarLink href="/dashboard/leads" active={pathname === "/dashboard/leads"} label="Leads" />
+          <SidebarLink href="/dashboard/gallery" active={pathname === "/dashboard/gallery"} label="Gallery" />
+          <SidebarLink href="/dashboard/sample-material" active={pathname === "/dashboard/sample-material"} label="Sample Material" />
         </nav>
         <div className="p-4 border-t border-gray-700">
           <Button className="w-full" onClick={handleLogout}>
