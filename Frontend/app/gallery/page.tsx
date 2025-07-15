@@ -42,8 +42,8 @@ export default function GalleryPage() {
         />
         <div className="inset-0 flex flex-col items-center justify-center px-4 text-center">
           <h1 className="text-3xl md:text-4xl font-bold text-white drop-shadow-lg mb-4">
-            "Success is no accident. It is hard work, perseverance, learning,
-            studying, sacrifice, and most of all, love of what you are doing."
+            &quot;Success is no accident. It is hard work, perseverance, learning,
+            studying, sacrifice, and most of all, love of what you are doing.&quot;
           </h1>
           <p className="text-lg text-white/80">- Sikandar Sir</p>
           <p className="text-sm text-white/80 ">Director at Arpita&apos;s Science Academy</p>
