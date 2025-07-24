@@ -1,44 +1,288 @@
 import { Course } from "./types";
 
 export const coursesData: Course[] = [
-  // JEE
-  { id: "1", title: "IIT JEE One Year", slug: "jee-one-year", description: "JEE one year", targetExam: "JEE", programType: "One Year" },
-  { id: "2", title: "IIT JEE Two Year", slug: "jee-two-year", description: "JEE two year", targetExam: "JEE", programType: "Two Year" },
-  { id: "3", title: "IIT JEE Dropper", slug: "jee-dropper", description: "JEE dropper", targetExam: "JEE", programType: "Dropper" },
+  {
+    slug: "jee-dropper",
+    title: "IIT JEE Dropper",
+    description: "JEE dropper course for 12th pass students",
+    longDescription: `This is a highly intensive course designed for JEE aspirants who have completed Class 12 and are targeting JEE Main and Advanced in the upcoming year. This batch offers rigorous practice, test series, personal mentoring and doubt sessions to boost your rank.`,
+    image: "/course/iitdropper.png",
+    targetExam: "JEE",
+    programType: "Dropper",
+  },
+  {
+    slug: "jee-one-year",
+    title: "IIT JEE One Year",
+    description: "One year course for JEE aspirants in Class 12",
+    longDescription: `A focused one-year program for students moving to Class 12, targeting JEE Main and Advanced. Includes comprehensive study material, regular tests, and expert guidance.`,
+    image: "/images/courses/jee-one-year.jpg",
+    targetExam: "JEE",
+    programType: "One Year",
+   
+  },
+  {
+    slug: "jee-two-year",
+    title: "IIT JEE Two Year",
+    description: "Two year course for JEE aspirants in Class 11",
+    longDescription: `A two-year integrated program for students entering Class 11, covering the entire JEE syllabus with in-depth teaching, practice, and mentoring.`,
+    image: "/images/courses/jee-two-year.jpg",
+    targetExam: "JEE",
+    programType: "Two Year",
+    
+  },
+  {
+    slug: "neet-dropper-batch",
+    title: "NEET Dropper Batch",
+    description: "NEET dropper course for 12th pass students",
+    longDescription: `An intensive NEET preparation course for students who have completed Class 12. Includes exhaustive practice, test series, and doubt-solving sessions to maximize your NEET score.`,
+    image: "/images/courses/neet-dropper.jpg",
+    targetExam: "NEET",
+    programType: "Dropper",
+    
+  },
+  {
+    slug: "neet-one-year",
+    title: "NEET One Year",
+    description: "One year course for NEET aspirants in Class 12",
+    longDescription: `A one-year program for Class 12 students targeting NEET. Comprehensive coverage of Physics, Chemistry, and Biology with regular assessments and expert mentoring.`,
+    image: "/images/courses/neet-one-year.jpg",
+    targetExam: "NEET",
+    programType: "One Year",
+    
+  },
+  {
+    slug: "neet-two-year",
+    title: "NEET Two Year",
+    description: "Two year course for NEET aspirants in Class 11",
+    longDescription: `A two-year foundation course for students entering Class 11, focusing on building strong concepts and problem-solving skills for NEET.`,
+    image: "/images/courses/neet-two-year.jpg",
+    targetExam: "NEET",
+    programType: "Two Year",
+    
+  },
+  {
+    slug: "cet-dropper",
+    title: "CET Dropper",
+    description: "CET dropper course for 12th pass students",
+    longDescription: `A dedicated course for CET aspirants who have completed Class 12. Includes rigorous practice, mock tests, and personalized mentoring for best results.`,
+    image: "/images/courses/cet-dropper.jpg",
+    targetExam: "CET",
+    programType: "Dropper",
+    
+  },
+  {
+    slug: "cet-one-year",
+    title: "CET One Year",
+    description: "One year course for CET aspirants in Class 12",
+    longDescription: `A one-year program for Class 12 students preparing for CET. Covers all subjects with regular tests and expert guidance.`,
+    image: "/images/courses/cet-one-year.jpg",
+    targetExam: "CET",
+    programType: "One Year",
+   
+  },
+  {
+    slug: "cet-two-year",
+    title: "CET Two Year",
+    description: "Two year course for CET aspirants in Class 11",
+    longDescription: `A comprehensive two-year course for students entering Class 11, focusing on CET preparation with detailed study material and assessments.`,
+    image: "/images/courses/cet-two-year.jpg",
+    targetExam: "CET",
+    programType: "Two Year",
+    
+  },
+  {
+    slug: "nda-dropper",
+    title: "NDA Dropper",
+    description: "NDA dropper course for 12th pass students",
+    longDescription: `An intensive NDA preparation course for students who have completed Class 12. Includes focused study plans, test series, and personal mentoring.`,
+    image: "/images/courses/nda-dropper.jpg",
+    targetExam: "NDA",
+    programType: "Dropper",
+    
+  },
+  {
+    slug: "nda-one-year",
+    title: "NDA One Year",
+    description: "One year course for NDA aspirants in Class 12",
+    longDescription: `A one-year program for Class 12 students targeting NDA. Comprehensive coverage of all subjects, regular tests, and expert mentoring.`,
+    image: "/images/courses/nda-one-year.jpg",
+    targetExam: "NDA",
+    programType: "One Year",
+   
+  },
+  {
+    slug: "nda-two-year",
+    title: "NDA Two Year",
+    description: "Two year course for NDA aspirants in Class 11",
+    longDescription: `A two-year integrated program for students entering Class 11, focusing on NDA preparation with in-depth teaching and regular assessments.`,
+    image: "/images/courses/nda-two-year.jpg",
+    targetExam: "NDA",
+    programType: "Two Year",
+    
+  },
+  {
+    slug: "foundation-cbse-8",
+    title: "Foundation Class 8 CBSE",
+    description: "Foundation course for Class 8 CBSE students",
+    longDescription: `A foundation course for Class 8 CBSE students, focusing on building strong fundamentals in Science and Mathematics for future competitive exams.`,
+    image: "/images/courses/foundation-cbse-8.jpg",
+    targetExam: "Foundation",
 
-  // NEET
-  { id: "4", title: "NEET One year", slug: "neet-one-year", description: "NEET One year", targetExam: "NEET", programType: "One Year" },
-  { id: "5", title: "NEET Two year", slug: "neet-two-year", description: "NEET Two year", targetExam: "NEET", programType: "Two Year" },
-  { id: "6", title: "NEET Dropper Batch", slug: "neet-dropper-batch", description: "NEET dropper batch", targetExam: "NEET", programType: "Dropper" },
-
-  // CET
-  { id: "7", title: "CET One Year", slug: "cet-one-year", description: "CET one year", targetExam: "CET", programType: "One Year" },
-  { id: "8", title: "CET Two Year", slug: "cet-two-year", description: "CET two year", targetExam: "CET", programType: "Two Year" },
-  { id: "9", title: "CET Dropper", slug: "cet-dropper", description: "CET dropper", targetExam: "CET", programType: "Dropper" },
-
-  // NDA
-  { id: "10", title: "NDA One Year", slug: "nda-one-year", description: "NDA one year", targetExam: "NDA", programType: "One Year" },
-  { id: "12", title: "NDA Two Year", slug: "nda-two-year", description: "NDA two year", targetExam: "NDA", programType: "Two Year" },
-  { id: "11", title: "NDA Dropper", slug: "nda-dropper", description: "NDA dropper", targetExam: "NDA", programType: "Dropper" },
-
-  // Foundation CBSE
-  { id: "13", title: "Foundation Class 8 CBSE", slug: "foundation-cbse-8", description: "Class 8 CBSE", targetExam: "Foundation", board: "CBSE", classLevel: "8" },
-  { id: "14", title: "Foundation Class 9 CBSE", slug: "foundation-cbse-9", description: "Class 9 CBSE", targetExam: "Foundation", board: "CBSE", classLevel: "9" },
-  { id: "15", title: "Foundation Class 10 CBSE", slug: "foundation-cbse-10", description: "Class 10 CBSE", targetExam: "Foundation", board: "CBSE", classLevel: "10" },
-  { id: "16", title: "Foundation Class 11 CBSE", slug: "foundation-cbse-11", description: "Class 11 CBSE", targetExam: "Foundation", board: "CBSE", classLevel: "11" },
-  { id: "17", title: "Foundation Class 12 CBSE", slug: "foundation-cbse-12", description: "Class 12 CBSE", targetExam: "Foundation", board: "CBSE", classLevel: "12" },
-
-  // Foundation ICSE
-  { id: "18", title: "Foundation Class 8 ICSE", slug: "foundation-icse-8", description: "Class 8 ICSE", targetExam: "Foundation", board: "ICSE", classLevel: "8" },
-  { id: "19", title: "Foundation Class 9 ICSE", slug: "foundation-icse-9", description: "Class 9 ICSE", targetExam: "Foundation", board: "ICSE", classLevel: "9" },
-  { id: "20", title: "Foundation Class 10 ICSE", slug: "foundation-icse-10", description: "Class 10 ICSE", targetExam: "Foundation", board: "ICSE", classLevel: "10" },
-  { id: "21", title: "Foundation Class 11 ICSE", slug: "foundation-icse-11", description: "Class 11 ICSE", targetExam: "Foundation", board: "ICSE", classLevel: "11" },
-  { id: "22", title: "Foundation Class 12 ICSE", slug: "foundation-icse-12", description: "Class 12 ICSE", targetExam: "Foundation", board: "ICSE", classLevel: "12" },
-
-  // Foundation MH Board
-  { id: "23", title: "Foundation Class 8 MH", slug: "foundation-mh-8", description: "Class 8 MH Board", targetExam: "Foundation", board: "MH Board", classLevel: "8" },
-  { id: "24", title: "Foundation Class 9 MH", slug: "foundation-mh-9", description: "Class 9 MH Board", targetExam: "Foundation", board: "MH Board", classLevel: "9" },
-  { id: "25", title: "Foundation Class 10 MH", slug: "foundation-mh-10", description: "Class 10 MH Board", targetExam: "Foundation", board: "MH Board", classLevel: "10" },
-  { id: "26", title: "Foundation Class 11 MH", slug: "foundation-mh-11", description: "Class 11 MH Board", targetExam: "Foundation", board: "MH Board", classLevel: "11" },
-  { id: "27", title: "Foundation Class 12 MH", slug: "foundation-mh-12", description: "Class 12 MH Board", targetExam: "Foundation", board: "MH Board", classLevel: "12" },
+    board: "CBSE",
+    classLevel: "8",
+  },
+  {
+    slug: "foundation-cbse-9",
+    title: "Foundation Class 9 CBSE",
+    description: "Foundation course for Class 9 CBSE students",
+    longDescription: `A foundation course for Class 9 CBSE students, strengthening concepts in Science and Mathematics and preparing for Olympiads and NTSE.`,
+    image: "/images/courses/foundation-cbse-9.jpg",
+    targetExam: "Foundation",
+   
+    board: "CBSE",
+    classLevel: "9",
+  },
+  {
+    slug: "foundation-cbse-10",
+    title: "Foundation Class 10 CBSE",
+    description: "Foundation course for Class 10 CBSE students",
+    longDescription: `A foundation course for Class 10 CBSE students, focusing on board exam preparation and building a base for competitive exams like JEE/NEET.`,
+    image: "/images/courses/foundation-cbse-10.jpg",
+    targetExam: "Foundation",
+   
+    board: "CBSE",
+    classLevel: "10",
+  },
+  {
+    slug: "foundation-cbse-11",
+    title: "Foundation Class 11 CBSE",
+    description: "Foundation course for Class 11 CBSE students",
+    longDescription: `A foundation course for Class 11 CBSE students, focusing on advanced concepts and preparing for competitive exams.`,
+    image: "/images/courses/foundation-cbse-11.jpg",
+    targetExam: "Foundation",
+  
+    board: "CBSE",
+    classLevel: "11",
+  },
+  {
+    slug: "foundation-cbse-12",
+    title: "Foundation Class 12 CBSE",
+    description: "Foundation course for Class 12 CBSE students",
+    longDescription: `A foundation course for Class 12 CBSE students, focusing on board exam excellence and competitive exam readiness.`,
+    image: "/images/courses/foundation-cbse-12.jpg",
+    targetExam: "Foundation",
+   
+    board: "CBSE",
+    classLevel: "12",
+  },
+  {
+    slug: "foundation-icse-8",
+    title: "Foundation Class 8 ICSE",
+    description: "Foundation course for Class 8 ICSE students",
+    longDescription: `A foundation course for Class 8 ICSE students, building strong fundamentals in Science and Mathematics for future success.`,
+    image: "/images/courses/foundation-icse-8.jpg",
+    targetExam: "Foundation",
+    
+    board: "ICSE",
+    classLevel: "8",
+  },
+  {
+    slug: "foundation-icse-9",
+    title: "Foundation Class 9 ICSE",
+    description: "Foundation course for Class 9 ICSE students",
+    longDescription: `A foundation course for Class 9 ICSE students, strengthening concepts and preparing for Olympiads and NTSE.`,
+    image: "/images/courses/foundation-icse-9.jpg",
+    targetExam: "Foundation",
+    
+    board: "ICSE",
+    classLevel: "9",
+  },
+  {
+    slug: "foundation-icse-10",
+    title: "Foundation Class 10 ICSE",
+    description: "Foundation course for Class 10 ICSE students",
+    longDescription: `A foundation course for Class 10 ICSE students, focusing on board exam preparation and competitive exam foundation.`,
+    image: "/images/courses/foundation-icse-10.jpg",
+    targetExam: "Foundation",
+   
+    board: "ICSE",
+    classLevel: "10",
+  },
+  {
+    slug: "foundation-icse-11",
+    title: "Foundation Class 11 ICSE",
+    description: "Foundation course for Class 11 ICSE students",
+    longDescription: `A foundation course for Class 11 ICSE students, focusing on advanced concepts and competitive exam readiness.`,
+    image: "/images/courses/foundation-icse-11.jpg",
+    targetExam: "Foundation",
+    
+    board: "ICSE",
+    classLevel: "11",
+  },
+  {
+    slug: "foundation-icse-12",
+    title: "Foundation Class 12 ICSE",
+    description: "Foundation course for Class 12 ICSE students",
+    longDescription: `A foundation course for Class 12 ICSE students, focusing on board exam excellence and competitive exam preparation.`,
+    image: "/images/courses/foundation-icse-12.jpg",
+    targetExam: "Foundation",
+    
+    board: "ICSE",
+    classLevel: "12",
+  },
+  {
+    slug: "foundation-mh-8",
+    title: "Foundation Class 8 MH",
+    description: "Foundation course for Class 8 Maharashtra Board students",
+    longDescription: `A foundation course for Class 8 Maharashtra Board students, building strong fundamentals in Science and Mathematics.`,
+    image: "/images/courses/foundation-mh-8.jpg",
+    targetExam: "Foundation",
+    
+    board: "MH Board",
+    classLevel: "8",
+  },
+  {
+    slug: "foundation-mh-9",
+    title: "Foundation Class 9 MH",
+    description: "Foundation course for Class 9 Maharashtra Board students",
+    longDescription: `A foundation course for Class 9 Maharashtra Board students, strengthening concepts and preparing for Olympiads and NTSE.`,
+    image: "/images/courses/foundation-mh-9.jpg",
+    targetExam: "Foundation",
+    
+    board: "MH Board",
+    classLevel: "9",
+  },
+  {
+    slug: "foundation-mh-10",
+    title: "Foundation Class 10 MH",
+    description: "Foundation course for Class 10 Maharashtra Board students",
+    longDescription: `A foundation course for Class 10 Maharashtra Board students, focusing on board exam preparation and competitive exam foundation.`,
+    image: "/images/courses/foundation-mh-10.jpg",
+    targetExam: "Foundation",
+    
+    board: "MH Board",
+    classLevel: "10",
+  },
+  {
+    slug: "foundation-mh-11",
+    title: "Foundation Class 11 MH",
+    description: "Foundation course for Class 11 Maharashtra Board students",
+    longDescription: `A foundation course for Class 11 Maharashtra Board students, focusing on advanced concepts and competitive exam readiness.`,
+    image: "/images/courses/foundation-mh-11.jpg",
+    targetExam: "Foundation",
+    
+    board: "MH Board",
+    classLevel: "11",
+  },
+  {
+    slug: "foundation-mh-12",
+    title: "Foundation Class 12 MH",
+    description: "Foundation course for Class 12 Maharashtra Board students",
+    longDescription: `A foundation course for Class 12 Maharashtra Board students, focusing on board exam excellence and competitive exam preparation.`,
+    image: "/images/courses/foundation-mh-12.jpg",
+    targetExam: "Foundation",
+    
+    board: "MH Board",
+    classLevel: "12",
+  },
 ];

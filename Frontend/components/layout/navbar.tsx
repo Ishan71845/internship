@@ -32,6 +32,8 @@ const Navbar = () => {
             <li><Link href="/testimonial">Testimonials</Link></li>
             <li><Link href="/gallery">Gallery</Link></li>
             <Link href="/sample-material">Sample Study Material</Link>
+            <Link href="/admin/login" className="text-sm font-medium">Admin</Link>
+
           </ul>
 
           {/* Social icons on desktop */}
