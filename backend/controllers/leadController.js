@@ -1,35 +1,39 @@
 import Lead from "../models/Lead.js";
 
-// ✅ POST /api/leads — Create a new lead
+// ✅ Create a new lead
 export const createLead = async (req, res) => {
   try {
-    const { name, phone, email, message, course } = req.body;
+    const { name, email, phone } = req.body;
 
-    const lead = new Lead({ name, phone, email, message, course });
-    await lead.save();
+    const newLead = new Lead({ name, email, phone });
+    await newLead.save();
 
-    res.status(201).json({ message: "Lead submitted successfully", lead });
+    res.status(201).json({ success: true, message: "Lead submitted successfully" });
   } catch (error) {
+    console.error("Create Lead Error:", error);
     res.status(500).json({ error: "Failed to submit lead" });
   }
 };
 
-// ✅ GET /api/leads — Fetch all leads (admin only)
+// ✅ Get all leads
 export const getLeads = async (req, res) => {
   try {
     const leads = await Lead.find().sort({ createdAt: -1 });
     res.status(200).json(leads);
   } catch (error) {
+    console.error("Get Leads Error:", error);
     res.status(500).json({ error: "Failed to fetch leads" });
   }
 };
 
-// ✅ DELETE /api/leads/:id — Delete a lead (admin only)
+// ✅ Delete a lead by ID
 export const deleteLead = async (req, res) => {
   try {
-    await Lead.findByIdAndDelete(req.params.id);
-    res.status(200).json({ message: "Lead deleted successfully" });
+    const leadId = req.params.id;
+    await Lead.findByIdAndDelete(leadId);
+    res.status(200).json({ success: true, message: "Lead deleted successfully" });
   } catch (error) {
+    console.error("Delete Lead Error:", error);
     res.status(500).json({ error: "Failed to delete lead" });
   }
 };

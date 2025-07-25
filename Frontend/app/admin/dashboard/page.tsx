@@ -3,12 +3,13 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-interface Lead {
+export interface Lead {
   _id: string;
   name: string;
-  phone: string;
   email: string;
-  // Add any other fields you have
+  phone: string;
+  course: string;
+  createdAt: string;
 }
 
 export default function AdminDashboard() {
@@ -26,15 +27,16 @@ export default function AdminDashboard() {
 
     const fetchLeads = async () => {
       try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/admin/leads`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/leads/leads`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         });
 
         if (res.ok) {
-          const data = await res.json();
-          setLeads(data);
+          const json = await res.json();
+          const leadArray = Array.isArray(json) ? json : []; // ✅ FIX
+          setLeads(leadArray);
         } else {
           setError('Failed to fetch leads');
         }
@@ -56,7 +58,7 @@ export default function AdminDashboard() {
       ) : (
         <ul className="space-y-2">
           {leads.map((lead) => (
-            <li key={lead._id} className="p-4 bg-gray-100 rounded">
+            <li key={lead._id} className="p-4 bg-black rounded">
               <p><strong>Name:</strong> {lead.name}</p>
               <p><strong>Email:</strong> {lead.email}</p>
               <p><strong>Phone:</strong> {lead.phone}</p>

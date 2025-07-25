@@ -1,24 +1,29 @@
+// middleware/authMiddleware.js
 import jwt from 'jsonwebtoken';
 
-export const protect = async (req, res, next) => {
+export const protect = (req, res, next) => {
+  const authHeader = req.headers.authorization;
+
+  if (!authHeader || !authHeader.startsWith('Bearer ')) {
+    return res.status(401).json({ message: 'Not authorized, no token' });
+  }
+
+  const token = authHeader.split(' ')[1];
+
   try {
-    const token = req.headers.authorization;
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-    if (!token || !token.startsWith('Bearer ')) {
-      return res.status(401).json({ message: 'Not authorized, no token' });
+    // Debug logs (optional)
+    // console.log("Token:", token);
+    // console.log("Decoded:", decoded);
+
+    if (decoded.role !== 'admin') {
+      return res.status(403).json({ message: 'Forbidden: Not an admin' });
     }
 
-    const decoded = jwt.verify(token.split(' ')[1], process.env.JWT_SECRET);
-
-    // Dummy check: you can later fetch actual admin from DB if needed
-    if (decoded && decoded.role === 'admin') {
-      req.admin = decoded;
-      next();
-    } else {
-      res.status(403).json({ message: 'Forbidden: Invalid credentials' });
-    }
+    req.admin = decoded; // Optional: attach to request
+    next();
   } catch (error) {
-    console.error('Auth error:', error);
-    res.status(401).json({ message: 'Not authorized, token failed' });
+    return res.status(401).json({ message: 'Not authorized, token failed' });
   }
 };

@@ -1,10 +1,11 @@
+// components/courses/LeadForm.tsx
 "use client";
 
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
-export function LeadForm() {
+export function LeadForm({ course }: { course: string }) {
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -15,14 +16,31 @@ export function LeadForm() {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    console.log("Lead captured:", form);
 
-    // In production: send to API endpoint here.
-    alert("Thank you! We will reach out to you soon.");
+    const payload = {
+      ...form,
+      course, // ✅ include course
+    };
 
-    setForm({ name: "", email: "", phone: "" });
+    try {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/leads/create-lead`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (res.ok) {
+        alert("Thank you! We will reach out to you soon.");
+        setForm({ name: "", email: "", phone: "" });
+      } else {
+        alert("Submission failed");
+      }
+    } catch (err) {
+      console.error("Error submitting lead:", err);
+      alert("Server error");
+    }
   }
 
   return (

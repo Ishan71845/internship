@@ -24,9 +24,9 @@ export default function LeadTable({ leads }: Props) {
             <tr key={lead._id} className="border-b">
               <td className="px-4 py-2">{lead.name}</td>
               <td className="px-4 py-2">{lead.email}</td>
-            <td className="px-4 py-2">{lead.phoneNumber}</td>
+            <td className="px-4 py-2">{lead.phone}</td>
               <td className="px-4 py-2">{lead.course}</td>
-              <td className="px-4 py-2">{new Date(lead.submittedAt).toLocaleString()}</td>
+              <td className="px-4 py-2">{new Date(lead.createdAt).toLocaleString()}</td>
             </tr>
           ))}
         </tbody>
