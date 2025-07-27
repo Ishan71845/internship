@@ -1,5 +1,4 @@
-// components/courses/LeadForm.tsx
-"use client";
+// components/LeadForm.tsx
 
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
@@ -21,15 +20,18 @@ export function LeadForm({ course }: { course: string }) {
 
     const payload = {
       ...form,
-      course, // ✅ include course
+      course, // ✅ include course title here
     };
 
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/leads/create-lead`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/leads/create-lead`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        }
+      );
 
       if (res.ok) {
         alert("Thank you! We will reach out to you soon.");
@@ -59,6 +61,7 @@ export function LeadForm({ course }: { course: string }) {
         value={form.email}
         onChange={handleChange}
         required
+        title="Please enter a valid email address"
       />
       <Input
         name="phone"
@@ -66,8 +69,12 @@ export function LeadForm({ course }: { course: string }) {
         value={form.phone}
         onChange={handleChange}
         required
+        pattern="[0-9]{10}"
+        title="Please enter exactly 10 digits"
       />
-      <Button type="submit" className="w-full">Submit</Button>
+      <Button type="submit" className="w-full">
+        Submit
+      </Button>
     </form>
   );
 }

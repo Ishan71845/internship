@@ -121,6 +121,39 @@ export const coursesData: Course[] = [
     
   },
   {
+    slug: "foundation-cbse-7",
+    title: "Foundation Class 7 CBSE",
+    description: "Foundation course for Class 7 CBSE students",
+    longDescription: `A foundation course for Class 7 CBSE students, focusing on building strong fundamentals in Science and Mathematics for future competitive exams.`,
+    image: "/images/courses/foundation-cbse-7.jpg",
+    targetExam: "Foundation",
+
+    board: "CBSE",
+    classLevel: "7",
+  },
+  {
+    slug: "foundation-mh-7",
+    title: "Foundation Class 7 MH Board",
+    description: "Foundation course for Class 7 MH Board students",
+    longDescription: `A foundation course for Class 7 MH Board students, focusing on building strong fundamentals in Science and Mathematics for future competitive exams.`,
+    image: "/images/courses/foundation-mh-7.jpg",
+    targetExam: "Foundation",
+
+    board: "MH Board",
+    classLevel: "7",
+  },
+  {
+    slug: "foundation-icse-7",
+    title: "Foundation Class 7 ICSE",
+    description: "Foundation course for Class 7 ICSE students",
+    longDescription: `A foundation course for Class 7 ICSE students, focusing on building strong fundamentals in Science and Mathematics for future competitive exams.`,
+    image: "/images/courses/foundation-ICSE-7.jpg",
+    targetExam: "Foundation",
+
+    board: "ICSE",
+    classLevel: "7",
+  },
+  {
     slug: "foundation-cbse-8",
     title: "Foundation Class 8 CBSE",
     description: "Foundation course for Class 8 CBSE students",

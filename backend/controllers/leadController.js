@@ -1,14 +1,30 @@
 import Lead from "../models/Lead.js";
 
-// ✅ Create a new lead
+// ✅ Create a new lead (with duplicate check)
 export const createLead = async (req, res) => {
   try {
-    const { name, email, phone } = req.body;
+    const { name, email, phone, course } = req.body;
 
-    const newLead = new Lead({ name, email, phone });
+    // 🛑 Check for existing lead by email or phone
+    const existingLead = await Lead.findOne({
+      $or: [{ email }, { phone }]
+    });
+
+    if (existingLead) {
+      return res.status(409).json({
+        success: false,
+        message: "Lead already exists with this email or phone"
+      });
+    }
+
+    // ✅ Save new lead
+    const newLead = new Lead({ name, email, phone, course  });
     await newLead.save();
 
-    res.status(201).json({ success: true, message: "Lead submitted successfully" });
+    res.status(201).json({
+      success: true,
+      message: "Lead submitted successfully"
+    });
   } catch (error) {
     console.error("Create Lead Error:", error);
     res.status(500).json({ error: "Failed to submit lead" });

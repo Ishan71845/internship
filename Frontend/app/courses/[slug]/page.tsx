@@ -51,7 +51,7 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
       {/* LEAD FORM */}
       <div id="apply-form" className="mt-12">
         <h2 className="text-2xl font-semibold mb-4">Apply for this course</h2>
-        <LeadForm />
+        <LeadForm course={params.slug} />
       </div>
     </div>
   );
