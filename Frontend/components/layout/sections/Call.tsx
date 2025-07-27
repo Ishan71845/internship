@@ -8,7 +8,7 @@ export default function CallToAction() {
         Join hundreds of students who have already started their journey with us. Admissions closing soon!
       </p>
       <a
-        href="/admissions"
+        href="/courses"
         className="inline-block bg-white text-blue-900 font-semibold px-8 py-3 rounded-full shadow hover:bg-gray-200 transition"
       >
         Apply Now

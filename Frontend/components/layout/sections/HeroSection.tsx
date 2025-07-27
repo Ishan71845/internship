@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import AchievementsCarousel from "@/components/layout/sections/AchievementCarousel";
+import { FooterSection } from "./FooterSection";
 
 const HeroSection = () => {
   const currentYear = new Date().getFullYear();
@@ -28,7 +29,7 @@ const HeroSection = () => {
               Explore Courses
             </button>
           </Link>
-          <Link href="/contact" aria-label="Contact Us">
+          <Link href="/#contact" aria-label="Contact Us">
             <button className="bg-green-600 text-white font-bold px-8 py-4 rounded-lg shadow-lg hover:bg-green-800 transition">
               Contact Us
             </button>

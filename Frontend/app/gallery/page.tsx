@@ -4,6 +4,7 @@ import Image from "next/image";
 
 const galleryImages = [
   "/gallery/director.jpg",
+  // "/gallery/pic21.jpg",
   "/gallery/pic1.jpg",
   "/gallery/pic2.jpg",
   "/gallery/pic3.jpg",
@@ -24,7 +25,6 @@ const galleryImages = [
   "/gallery/pic18.jpg",
   "/gallery/pic19.jpg",
   "/gallery/pic20.jpg",
-  "/gallery/pic21.jpg",
 ];
 
 export default function GalleryPage() {

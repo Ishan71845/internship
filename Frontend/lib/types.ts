@@ -1,6 +1,8 @@
 export type Course = {
   slug: string;
   title: string;
+  price?: String;
+  discountedPrice?: String;
   description: string;
   longDescription: string;
   image: string;

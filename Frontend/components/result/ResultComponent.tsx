@@ -1,51 +1,45 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { studentResults } from "@/lib/resultData";
 
-export default function ResultCollages() {
-  const collages = [
-    {
-      id: 1,
-      title: "12th Boards + JEE/NEET/CET Results",
-      image: "/results/collage2.jpg",
-    },
-    {
-      id: 2,
-      title: "10th Boards Results",
-      image: "/results/collage10.jpg",
-    },
-  ];
-
+export default function ResultComponent() {
   return (
-    <div className="py-12">
-      <h2 className="text-center text-3xl font-bold mb-8">Our Outstanding Results</h2>
+    <section className="py-16 container">
+      <h2 className="text-3xl font-bold text-center mb-10">
+        Our Outstanding Achievers
+      </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-        {collages.map((collage) => (
+      <div className="grid gap-6 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+        {studentResults.map((student) => (
           <motion.div
-            key={collage.id}
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            key={student.id}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="shadow-lg rounded-lg overflow-hidden"
+            className="bg-white dark:bg-card p-3 rounded-xl shadow-md text-center relative"
           >
-            <div className="relative w-full h-[70vh]">
+            <div className="absolute top-2 -left-6 bg-yellow-400 text-black text-xs px-2 py-1 font-semibold rounded">
+              {student.rank}
+            </div>
+
+            <div className="w-28 h-28 mx-auto mb-3 relative rounded-full overflow-hidden border-2 border-primary shadow">
               <Image
-                src={collage.image}
-                alt={collage.title}
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 70vw"
+                src={student.image}
+                alt={student.name}
+                width={112}
+                height={112}
+                className="object-cover w-full h-full"
               />
             </div>
-            <div className="p-4 text-center">
-              <h3 className="text-xl font-semibold">{collage.title}</h3>
-            </div>
+
+            <h4 className="text-base font-semibold">{student.name}</h4>
+            <p className="text-xs text-muted-foreground">{student.result}</p>
           </motion.div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

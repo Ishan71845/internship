@@ -21,8 +21,8 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
           <Image
             src={course.image}
             alt={course.title}
-            width={800}
-            height={400}
+            width={180}
+            height={120}
             className="rounded-lg shadow-md"
           />
         </div>
@@ -34,6 +34,10 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
         {course.programType && <div><strong>Program Type:</strong> {course.programType}</div>}
         {course.board && <div><strong>Board:</strong> {course.board}</div>}
         {course.classLevel && <div><strong>Class Level:</strong> {course.classLevel}</div>}
+        {course.price && <div><strong>Price:</strong> ₹{course.price}</div>}
+        {course.discountedPrice && (
+          <div className="text-red-500"><strong>Discounted Price:</strong> ₹{course.discountedPrice}</div>
+        )}
       </div>
 
       {/* FULL DESCRIPTION */}
