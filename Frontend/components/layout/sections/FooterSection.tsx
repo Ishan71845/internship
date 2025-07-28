@@ -31,8 +31,8 @@ export const FooterSection = () => {
 
         <div>
           <h3 className="text-xl font-semibold mb-4">Contact</h3>
-          <p className="text-sm text-gray-200">📍 MIT Chowk, Pune</p>
-          <p className="text-sm text-gray-200">📞 +91-9876543210</p>
+          <p className="text-sm text-gray-200">📍 St Shiromani N Maharaja Path, Divya Nagar, Wanwadi, Pune, Maharashtra 411040</p>
+          <p className="text-sm text-gray-200">📞 +91-9876543XXX</p>
           <p className="text-sm text-gray-200">✉️ info@arpitasacademy.com</p>
         </div>
 

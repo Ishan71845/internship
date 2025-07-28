@@ -21,7 +21,7 @@ export default function ResultComponent() {
             viewport={{ once: true }}
             className="bg-white dark:bg-card p-3 rounded-xl shadow-md text-center relative"
           >
-            <div className="absolute top-2 -left-6 bg-yellow-400 text-black text-xs px-2 py-1 font-semibold rounded">
+            <div className=" top-2 -left-9 bg-yellow-400 text-black text-xs px-2 py-1 font-semibold rounded">
               {student.rank}
             </div>
 

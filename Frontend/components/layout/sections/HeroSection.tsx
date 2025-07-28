@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import AchievementsCarousel from "@/components/layout/sections/AchievementCarousel";
-import { FooterSection } from "./FooterSection";
+
 
 const HeroSection = () => {
   const currentYear = new Date().getFullYear();
