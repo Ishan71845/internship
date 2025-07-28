@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import Navbar from "@/components/layout/navbar"; // ✅ Adjusted import path
+import Navbar from "@/components/layout/navbar"; 
 import { ThemeProvider } from "@/components/layout/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -27,7 +27,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          <main className="pt-24">{/* Ensures content starts below fixed navbar */}
+          <main className="pt-24">
             {children}
           </main>
         </ThemeProvider>

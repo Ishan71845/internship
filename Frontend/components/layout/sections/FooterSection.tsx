@@ -1,5 +1,4 @@
 // app/components/layout/sections/FooterSection.tsx
-
 'use client';
 
 import React from "react";
@@ -31,9 +30,9 @@ export const FooterSection = () => {
 
         <div>
           <h3 className="text-xl font-semibold mb-4">Contact</h3>
-          <p className="text-sm text-gray-200">📍 St Shiromani N Maharaja Path, Divya Nagar, Wanwadi, Pune, Maharashtra 411040</p>
-          <p className="text-sm text-gray-200">📞 +91-9876543XXX</p>
-          <p className="text-sm text-gray-200">✉️ info@arpitasacademy.com</p>
+          <p className="text-sm text-gray-200">📍 Venus Nook, Office no. 11-12, Divya Nagar, Jambhulkar Chowk, Wanowrie, Pune 411040</p>
+          <p className="text-sm text-gray-200">📞 +91 8551887007</p>
+          <p className="text-sm text-gray-200">✉️ arpitas.enquiry@gmail</p>
         </div>
 
         <div>
