@@ -3,55 +3,59 @@ import { Building2, Clock, Mail, Phone } from "lucide-react";
 
 export const ContactSection = () => {
   return (
-    <section id="contact" className="container py-24 sm:py-32">
-      <div className="max-w-4xl mx-auto bg-muted/60 dark:bg-card rounded-2xl shadow-lg p-8 md:p-12 content-center">
-        <h2 className="text-4xl font-bold mb-6 text-primary">Contact Information</h2>
+    <section id="contact" className="container py-20 sm:py-28">
+      <div className="max-w-3xl mx-auto bg-muted/60 dark:bg-card rounded-2xl shadow-xl px-6 sm:px-10 py-10">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-10 text-primary">
+          Contact Information
+        </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Location */}
+        <div className="flex flex-col gap-8">
+          {/* Find Us */}
           <div className="flex items-start gap-4">
             <div className="bg-primary/10 text-primary p-3 rounded-full">
               <Building2 className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="font-semibold text-lg mb-1">Find Us</h4>
-              <p className="text-muted-foreground">📍 St Shiromani N Maharaja Path, Divya Nagar, Wanwadi, Pune, Maharashtra 411040</p>
-              <p className="text-muted-foreground">📍 Bhagwan Tatyasaheb Kawade Rd, Ganesh Nagar, Ghorpadi, Pune, Maharashtra 411036</p>
-              <p className="text-muted-foreground">📍 office no 23, BRAMHA ESTATE, Kondhwa Main Rd, near Jyoti Restourant, Krishnakevalnagar, Shivneri Nagar, NIBM, Pune, Maharashtra 411040</p>
+              <h4 className="font-semibold text-lg mb-2">Find Us</h4>
+              <ul className="text-sm text-muted-foreground space-y-1">
+                <li>📍 St Shiromani N Maharaja Path, Divya Nagar, Wanwadi, Pune 411040</li>
+                <li>📍 Bhagwan Tatyasaheb Kawade Rd, Ghorpadi, Pune 411036</li>
+                <li>📍 Office no 23, BRAMHA ESTATE, Kondhwa, Pune 411040</li>
+              </ul>
             </div>
           </div>
 
-          {/* Phone */}
+          {/* Call Us */}
           <div className="flex items-start gap-4">
             <div className="bg-primary/10 text-primary p-3 rounded-full">
               <Phone className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="font-semibold text-lg mb-1">Call Us</h4>
-              <p className="text-muted-foreground">+1 (619) 123-4567</p>
+              <h4 className="font-semibold text-lg mb-2">Call Us</h4>
+              <p className="text-sm text-muted-foreground">+1 (619) 123-4567</p>
             </div>
           </div>
 
-          {/* Email */}
+          {/* Mail Us */}
           <div className="flex items-start gap-4">
             <div className="bg-primary/10 text-primary p-3 rounded-full">
               <Mail className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="font-semibold text-lg mb-1">Mail Us</h4>
-              <p className="text-muted-foreground">leomirandadev@gmail.com</p>
+              <h4 className="font-semibold text-lg mb-2">Mail Us</h4>
+              <p className="text-sm text-muted-foreground">leomirandadev@gmail.com</p>
             </div>
           </div>
 
-          {/* Visiting Hours */}
+          {/* Visit Us */}
           <div className="flex items-start gap-4">
             <div className="bg-primary/10 text-primary p-3 rounded-full">
               <Clock className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="font-semibold text-lg mb-1">Visit Us</h4>
-              <p className="text-muted-foreground">Monday - Friday</p>
-              <p className="text-muted-foreground">8AM - 4PM</p>
+              <h4 className="font-semibold text-lg mb-2">Visit Us</h4>
+              <p className="text-sm text-muted-foreground">Monday - Friday</p>
+              <p className="text-sm text-muted-foreground">8AM - 4PM</p>
             </div>
           </div>
         </div>
