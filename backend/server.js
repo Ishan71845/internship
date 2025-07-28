@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
 
-// ✅ Route Imports
+//  Route Imports
 import adminRoutes from "./routes/adminRoutes.js";
 import courseRoutes from "./routes/courseRoutes.js";
 import facultyRoutes from "./routes/facultyRoutes.js";
@@ -18,7 +18,7 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// ✅ Middleware
+//  Middleware
 app.use(
   cors({
     origin: ["http://localhost:3000"], // Add deployed domain when live
@@ -27,7 +27,7 @@ app.use(
 );
 app.use(express.json());
 
-// ✅ Use Routes
+//  Use Routes
 app.use("/api/admin", adminRoutes);
 app.use("/api/courses", courseRoutes);
 app.use("/api/faculty", facultyRoutes);
@@ -35,7 +35,7 @@ app.use("/api/leads", leadRoutes);
 app.use("/api/testimonials", testimonialRoutes);
 app.use("/api/results", resultRoutes);
 
-// ✅ Connect DB and Start Server
+//  Connect DB and Start Server
 mongoose
   .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
