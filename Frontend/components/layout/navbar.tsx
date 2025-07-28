@@ -55,7 +55,7 @@ const Navbar = () => {
               <FaFacebook size={22} className="text-blue-600 hover:text-blue-800" />
             </a>
             <a
-              href="https://wa.me/919999999999"
+              href="https://wa.me/+918595627279"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"
@@ -80,9 +80,9 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden bg-white shadow-inner">
           <ul className="flex flex-col gap-4 p-6 text-gray-700 font-medium">
-            <li>
+            {/* <li>
               <Link href="/" onClick={() => setIsOpen(false)}>Why Us</Link>
-            </li>
+            </li> */}
             <li>
               <Link href="/results" onClick={() => setIsOpen(false)}>Results</Link>
             </li>
@@ -94,6 +94,12 @@ const Navbar = () => {
             </li>
             <li>
               <Link href="/testimonial" onClick={() => setIsOpen(false)}>Testimonials</Link>
+            </li>
+            <li>
+              <Link href="/gallery" onClick={() => setIsOpen(false)}>Gallery</Link>
+            </li>
+            <li>
+              <Link href="/sample-material" onClick={() => setIsOpen(false)}>Sample Study Material</Link>
             </li>
           </ul>
 
@@ -116,7 +122,7 @@ const Navbar = () => {
               <FaFacebook size={26} className="text-blue-600 hover:text-blue-800" />
             </a>
             <a
-              href="https://wa.me/919999999999"
+              href="https://wa.me/+918595627279"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"

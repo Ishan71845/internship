@@ -6,7 +6,7 @@ import Image from "next/image";
 import { studentPairs } from "@/data/studentData";
 
 const ResultCarousel = () => {
-  const [duration, setDuration] = useState(12); // default for medium/large
+  const [duration, setDuration] = useState(15); // default for medium/large
 
   // Detect screen width and adjust duration
   useEffect(() => {

@@ -17,8 +17,7 @@ const HeroSection = () => {
     >
       <div className="md:w-1/2 z-10 flex flex-col justify-center items-center md:items-start">
         <h1 className="text-3xl md:text-5xl font-extrabold leading-tight mb-4 text-blue-900">
-          Arpita&apos;s Science Academy: Premier Coaching for IIT JEE, NEET, NDA, CET, 10th & 12th Foundation
-        </h1>
+          Arpita&apos;s Science Academy</h1>
         <h2 className="text-lg md:text-2xl font-medium mb-6 text-blue-700">
           {yearsOfExperience}+ years empowering students for success in entrance & board exams.
         </h2>
