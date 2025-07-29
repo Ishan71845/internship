@@ -71,4 +71,46 @@ export const studentPairs = [
       image: "/students/Khanna.png",
     },
   ],
+  [
+    {
+      name: "Tony Stark",
+      exam: "Foundation",
+      rank: "State Rank 3",
+      image: "/students/Tony.png",
+    },
+    {
+      name: "Akshay Khanna",
+      exam: "Foundation",
+      rank: "State Rank 7",
+      image: "/students/Khanna.png",
+    },
+  ],
+  [
+    {
+      name: "Tony Stark",
+      exam: "Foundation",
+      rank: "State Rank 3",
+      image: "/students/Tony.png",
+    },
+    {
+      name: "Akshay Khanna",
+      exam: "Foundation",
+      rank: "State Rank 7",
+      image: "/students/Khanna.png",
+    },
+  ],
+  [
+    {
+      name: "Tony Stark",
+      exam: "Foundation",
+      rank: "State Rank 3",
+      image: "/students/Tony.png",
+    },
+    {
+      name: "Akshay Khanna",
+      exam: "Foundation",
+      rank: "State Rank 7",
+      image: "/students/Khanna.png",
+    },
+  ],
 ];

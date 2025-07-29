@@ -22,7 +22,7 @@ export const FooterSection = () => {
           <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
           <ul className="space-y-2 text-sm">
             <li><Link href="/" className="hover:text-blue-300">Home</Link></li>
-            <li><Link href="/#courses" className="hover:text-blue-300">Courses</Link></li>
+            <li><Link href="/courses" className="hover:text-blue-300">Courses</Link></li>
             <li><Link href="/#results" className="hover:text-blue-300">Results</Link></li>
             <li><Link href="/#contact" className="hover:text-blue-300">Contact</Link></li>
           </ul>

@@ -16,9 +16,9 @@ const HeroSection = () => {
       className="relative w-full min-h-screen flex flex-col-reverse md:flex-row justify-center items-center text-center md:text-left bg-gradient-to-r from-gray-100 to-gray-50 px-6 py-16 overflow-hidden"
     >
       <div className="md:w-1/2 z-10 flex flex-col justify-center items-center md:items-start">
-        <h1 className="text-3xl md:text-5xl font-extrabold leading-tight mb-4 text-blue-900">
+        <h1 className="text-2xl sm:text-3xl md:text-5xl font-extrabold leading-tight mb-4 text-blue-900 text-balance">
           Arpita&apos;s Science Academy</h1>
-        <h2 className="text-lg md:text-2xl font-medium mb-6 text-blue-700">
+       <h2 className="text-base sm:text-lg md:text-xl font-medium mb-6 text-blue-700 text-center md:text-left max-w-xs sm:max-w-md">
           {yearsOfExperience}+ years empowering students for success in entrance & board exams.
         </h2>
 
