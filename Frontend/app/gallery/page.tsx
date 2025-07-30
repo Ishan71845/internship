@@ -59,7 +59,7 @@ export default function GalleryPage() {
         </div>
       </div>
 
-      {/* ✅ DESKTOP ONLY: Original full hero */}
+      {/* DESKTOP ONLY: Original full hero */}
       <div className="hidden sm:flex relative w-full h-[400px] mb-8 rounded-xl overflow-hidden items-center justify-center">
         <Image
           src="/gallery/director.jpg"
@@ -83,7 +83,7 @@ export default function GalleryPage() {
         </div>
       </div>
 
-      {/* 📸 Gallery grid */}
+      {/*  Gallery grid */}
       <div className="columns-3 sm:columns-2 md:columns-3 gap-4 space-y-4">
         {galleryImages
           .filter((src) => src !== "/gallery/director.jpg")

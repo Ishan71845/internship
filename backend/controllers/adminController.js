@@ -1,9 +1,9 @@
 // adminController.js
 import asyncHandler from 'express-async-handler';
 import generateToken from '../utils/generateToken.js';
-import Lead from '../models/Lead.js'; // ✅ Import Lead model
+import Lead from '../models/Lead.js'; 
 
-// ✅ Login Admin
+//  Login Admin
 const loginAdmin = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
 
@@ -21,10 +21,10 @@ const loginAdmin = asyncHandler(async (req, res) => {
   }
 });
 
-// ✅ Protected Route - Get Leads
+//  Protected Route - Get Leads
 const getLeads = asyncHandler(async (req, res) => {
-  const leads = await Lead.find().sort({ createdAt: -1 }); // ✅ Fetch all leads from DB
-  res.json(leads); // ✅ Return leads as JSON
+  const leads = await Lead.find().sort({ createdAt: -1 }); 
+  res.json(leads); 
 });
 
 export { loginAdmin, getLeads };

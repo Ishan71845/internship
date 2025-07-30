@@ -1,11 +1,11 @@
 import Lead from "../models/Lead.js";
 
-// ✅ Create a new lead (with duplicate check)
+//  Create a new lead (with duplicate check)
 export const createLead = async (req, res) => {
   try {
     const { name, email, phone, course } = req.body;
 
-    // 🛑 Check for existing lead by email or phone
+    //  Check for existing lead by email or phone
     const existingLead = await Lead.findOne({
       $or: [{ email }, { phone }]
     });
@@ -17,7 +17,7 @@ export const createLead = async (req, res) => {
       });
     }
 
-    // ✅ Save new lead
+    //  Save new lead
     const newLead = new Lead({ name, email, phone, course  });
     await newLead.save();
 
@@ -31,7 +31,7 @@ export const createLead = async (req, res) => {
   }
 };
 
-// ✅ Get all leads
+//  Get all leads
 export const getLeads = async (req, res) => {
   try {
     const leads = await Lead.find().sort({ createdAt: -1 });
@@ -42,7 +42,7 @@ export const getLeads = async (req, res) => {
   }
 };
 
-// ✅ Delete a lead by ID
+//  Delete a lead by ID
 export const deleteLead = async (req, res) => {
   try {
     const leadId = req.params.id;
