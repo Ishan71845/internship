@@ -1,4 +1,3 @@
-// backend/routes/leadRoute.js
 import express from 'express';
 import { createLead, getLeads, deleteLead } from '../controllers/leadController.js';
 import { protect } from '../middleware/authMiddleware.js';

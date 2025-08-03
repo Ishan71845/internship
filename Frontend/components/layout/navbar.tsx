@@ -25,7 +25,7 @@ const Navbar = () => {
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-6">
           <ul className="flex gap-8 font-medium text-gray-700">
-            {/* <li><Link href="/">Why Us</Link></li> */}
+            <li><Link href="/">About us</Link></li>
             <li><Link href="/results">Results</Link></li>
             <li><Link href="/courses">Courses</Link></li>
             <li><Link href="/faculty">Faculty</Link></li>

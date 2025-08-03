@@ -1,13 +1,13 @@
-// components/admin/AdminLoginForm.tsx
 'use client';
 
 import { useState } from 'react';
 
 interface Props {
   onLogin: (email: string, password: string) => void;
+  disabled?: boolean;
 }
 
-export default function AdminLoginForm({ onLogin }: Props) {
+export default function AdminLoginForm({ onLogin, disabled }: Props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -22,27 +22,30 @@ export default function AdminLoginForm({ onLogin }: Props) {
         <label className="block mb-1 text-sm font-medium">Email</label>
         <input
           type="email"
-          className="w-full border px-3 py-2 rounded-md text-sm"
+          required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          required
+          className="w-full px-3 py-2 border rounded"
+          disabled={disabled}
         />
       </div>
       <div>
         <label className="block mb-1 text-sm font-medium">Password</label>
         <input
           type="password"
-          className="w-full border px-3 py-2 rounded-md text-sm"
+          required
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          required
+          className="w-full px-3 py-2 border rounded"
+          disabled={disabled}
         />
       </div>
       <button
         type="submit"
-        className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md text-sm font-medium"
+        className="w-full py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+        disabled={disabled}
       >
-        Login
+        {disabled ? 'Logging in...' : 'Login'}
       </button>
     </form>
   );

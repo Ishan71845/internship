@@ -4,13 +4,12 @@ const leadSchema = new mongoose.Schema({
   name: String,
   email: String,
   phone: String,
-  course: String,     
+  course: String,
   createdAt: {
     type: Date,
     default: Date.now
   }
 });
-
 
 const Lead = mongoose.model('Lead', leadSchema);
 export default Lead;

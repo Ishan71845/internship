@@ -1,80 +1,106 @@
-// components/LeadForm.tsx
+'use client';
 
-import { useState } from "react";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { useState } from 'react';
 
 export function LeadForm({ course }: { course: string }) {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-  });
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  }
+  const validateForm = () => {
+    const phoneRegex = /^[0-9]{10}$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  async function handleSubmit(e: React.FormEvent) {
+    if (!name.trim()) {
+      alert('Name is required.');
+      return false;
+    }
+
+    if (!emailRegex.test(email)) {
+      alert('Invalid email address.');
+      return false;
+    }
+
+    if (!phoneRegex.test(phone)) {
+      alert('Phone number must be exactly 10 digits.');
+      return false;
+    }
+
+    return true;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!validateForm()) return;
 
-    const payload = {
-      ...form,
-      course, // ✅ include course title here
-    };
+    setLoading(true);
+
+    const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5000';
 
     try {
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}/leads/create-lead`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-        }
-      );
+      const res = await fetch(`${BACKEND_URL}/api/leads/create-lead`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, phone, course }),
+      });
 
+      const data = await res.json();
       if (res.ok) {
-        alert("Thank you! We will reach out to you soon.");
-        setForm({ name: "", email: "", phone: "" });
+        alert('Submitted successfully!');
+        setName('');
+        setEmail('');
+        setPhone('');
       } else {
-        alert("Submission failed");
+        alert(data.message || '❌ Submission failed');
       }
     } catch (err) {
-      console.error("Error submitting lead:", err);
-      alert("Server error");
+      console.error('Lead form error:', err);
+      alert('Something went wrong. Please try again later.');
+    } finally {
+      setLoading(false);
     }
-  }
+  };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 max-w-md mx-auto">
-      <Input
-        name="name"
-        placeholder="Name"
-        value={form.name}
-        onChange={handleChange}
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <input
+        type="text"
+        placeholder="Your Name"
+        className="w-full px-4 py-2 rounded border text-black"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
         required
       />
-      <Input
-        name="email"
+      <input
         type="email"
-        placeholder="Email"
-        value={form.email}
-        onChange={handleChange}
+        placeholder="Your Email"
+        className="w-full px-4 py-2 rounded border text-black"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
         required
-        title="Please enter a valid email address"
       />
-      <Input
-        name="phone"
-        placeholder="Phone Number"
-        value={form.phone}
-        onChange={handleChange}
+      <input
+        type="text"
+        placeholder="Your Phone Number"
+        className="w-full px-4 py-2 rounded border text-black"
+        value={phone}
+        onChange={(e) => {
+          const value = e.target.value;
+          // Restrict to numeric input and max 10 digits
+          if (/^\d{0,10}$/.test(value)) {
+            setPhone(value);
+          }
+        }}
         required
-        pattern="[0-9]{10}"
-        title="Please enter exactly 10 digits"
       />
-      <Button type="submit" className="w-full">
-        Submit
-      </Button>
+      <button
+        type="submit"
+        disabled={loading}
+        className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded w-full"
+      >
+        {loading ? 'Submitting...' : 'Submit'}
+      </button>
     </form>
   );
 }

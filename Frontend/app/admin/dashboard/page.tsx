@@ -6,7 +6,6 @@ import { Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
 
-// Define the Lead interface
 interface Lead {
   _id: string;
   name: string;
@@ -26,7 +25,7 @@ export default function AdminDashboard() {
 
     const fetchLeads = async () => {
       try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/leads/leads`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/leads/leads`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -34,8 +33,7 @@ export default function AdminDashboard() {
 
         if (res.ok) {
           const json = await res.json();
-          const leadArray = Array.isArray(json) ? json : [];
-          setLeads(leadArray);
+          setLeads(Array.isArray(json) ? json : []);
         } else {
           setError('Failed to fetch leads');
         }
@@ -53,7 +51,7 @@ export default function AdminDashboard() {
 
     const token = localStorage.getItem('adminToken');
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/leads/${id}`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/leads/${id}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -99,11 +97,7 @@ export default function AdminDashboard() {
                   <td className="py-3 px-4 text-sm">{lead.phone}</td>
                   <td className="py-3 px-4 text-sm">{lead.course}</td>
                   <td className="py-3 px-4 text-right">
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      onClick={() => handleDelete(lead._id)}
-                    >
+                    <Button variant="ghost" size="icon" onClick={() => handleDelete(lead._id)}>
                       <Trash2 className="h-5 w-5 text-red-500 hover:text-red-700" />
                     </Button>
                   </td>
