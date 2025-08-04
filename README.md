@@ -1,4 +1,6 @@
 Coaching Website
+
+
 🚀 Overview
 This project is a full-stack web application for a coaching institute. The website allows students to browse courses and register online, while an integrated admin panel provides administrators with a comprehensive tool to manage new student registrations (leads).
 
