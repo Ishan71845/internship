@@ -122,7 +122,7 @@ const Navbar = () => {
               <FaFacebook size={26} className="text-blue-600 hover:text-blue-800" />
             </a>
             <a
-              href="https://wa.me/+918595627279"
+              href="https://wa.me/+9090909090"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"

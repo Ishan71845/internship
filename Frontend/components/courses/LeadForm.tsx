@@ -67,7 +67,7 @@ export function LeadForm({ course }: { course: string }) {
       <input
         type="text"
         placeholder="Your Name"
-        className="w-full px-4 py-2 rounded border text-black"
+        className="w-full px-4 py-2 rounded border text-white"
         value={name}
         onChange={(e) => setName(e.target.value)}
         required
@@ -75,7 +75,7 @@ export function LeadForm({ course }: { course: string }) {
       <input
         type="email"
         placeholder="Your Email"
-        className="w-full px-4 py-2 rounded border text-black"
+        className="w-full px-4 py-2 rounded border text-white"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         required
@@ -83,7 +83,7 @@ export function LeadForm({ course }: { course: string }) {
       <input
         type="text"
         placeholder="Your Phone Number"
-        className="w-full px-4 py-2 rounded border text-black"
+        className="w-full px-4 py-2 rounded border text-white"
         value={phone}
         onChange={(e) => {
           const value = e.target.value;
